@@ -23,7 +23,7 @@ class Project(Document):
     name = StringField(required=True)
     difficultyLevel = ReferenceField(DifficultyLevel, required=True)
     requiredTechs = ListField(ReferenceField(RequiredTech), required=True)
-    pictures = EmbeddedDocumentListField(Picture, required=True)
+    pictures = EmbeddedDocumentListField(Picture)
     description = StringField()
     assetsSrc = StringField()
     githubUrl = StringField()

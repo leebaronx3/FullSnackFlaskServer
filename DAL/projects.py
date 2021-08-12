@@ -75,7 +75,7 @@ def hide_project(project_id, user_id):
     project = Project.objects(id=project_id).first()
     project.update(isVisible=False)
     project.save()
-    return project
+    return project.reload().to_json()
 
 
 def add_new_project(project_data):

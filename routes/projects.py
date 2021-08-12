@@ -46,11 +46,11 @@ def update_project():
 @projects.route('/<project_id>/<user_id>/remove', methods=['PUT'])
 def hide_project_from_user(project_id, user_id):
     res = hide_project(project_id, user_id)
-
+    print(res)
     if not res['isVisible']:
-        return (True, 200)
+        return res, 200
     else:
-        return (False, 500)
+        return 'fail', 500
 
 
 # validate cookie
